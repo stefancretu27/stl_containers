@@ -1,7 +1,9 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
+#include <string>
 
+//sequence containers
 #include <array>
 #include <vector>
 #include <deque>

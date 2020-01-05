@@ -1,8 +1,9 @@
 CFLAGS = -std=c++11 -Wall -g
 CC = g++
+SOURCES = array_operations.cpp vector_operations.cpp
 
 all:
-	$(CC) $(CFLAGS) main.cpp array_operations.cpp -o containers.bin
+	$(CC) $(CFLAGS) main.cpp $(SOURCES) -o containers.bin
 	
 clean:
-	rm *.exe; rm *.o; rm *.bin
+	rm *.bin
