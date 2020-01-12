@@ -14,6 +14,7 @@
 void array_operations();
 //dynamic size arrays
 void vector_operations();
+//double ended queue
 void deque_operations();
 void fwd_list_operations();
 void list_operations();

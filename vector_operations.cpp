@@ -74,4 +74,13 @@ void vector_operations()
 		std::cout<<*it<<" ";
 	std::cout<<"\n";
 	std::cout<<"after pop_back ivec size: "<<ivec.size()<<" capacity: "<<ivec.capacity()<<std::endl;
+	
+	//emplace and emplace_back construct new element in place (in vector) using allocator
+	ivec.emplace_back(44);
+	std::cout<<"after emplace_back ivec size: "<<ivec.size()<<" capacity: "<<ivec.capacity()<<std::endl;
+	std::copy(ivec.begin(), ivec.end(), std::ostream_iterator<int>(std::cout, " "));
+	ivec.emplace(ivec.begin()+2, 567);
+	std::cout<<std::endl<<"after emplace_back ivec size: "<<ivec.size()<<" capacity: "<<ivec.capacity()<<std::endl;
+	std::copy(ivec.begin(), ivec.end(), std::ostream_iterator<int>(std::cout, " "));
+	std::cout<<"\n";
 }
