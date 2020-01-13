@@ -16,5 +16,7 @@ void array_operations();
 void vector_operations();
 //double ended queue
 void deque_operations();
+//singly-linked list
 void fwd_list_operations();
+//doubly-linked list
 void list_operations();

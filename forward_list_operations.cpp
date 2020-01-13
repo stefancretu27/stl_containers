@@ -80,5 +80,9 @@ void fwd_list_operations()
 	std::copy(ifwd_list.begin(), ifwd_list.end(), std::ostream_iterator<int>(std::cout, " "));
 	std::cout<<"\n";
 	
+	std::cout<<"2nd list"<<std::endl;
+	std::copy(ifwd_list2.begin(), ifwd_list2.end(), std::ostream_iterator<int>(std::cout, " "));
+	std::cout<<"\n";
+	
 	
 }
