@@ -22,6 +22,8 @@ int main()
 #ifdef ASSOCIATIVE_CONTAINERS
 	std::cout<<"----------------------------Set operations----------------------------"<<std::endl;
 	set_operations();
+	std::cout<<"----------------------------Multiset operations----------------------------"<<std::endl;
+	multiset_operations();
 #endif	
 	return 0;
 }
