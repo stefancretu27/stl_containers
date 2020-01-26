@@ -24,6 +24,10 @@ int main()
 	set_operations();
 	std::cout<<"----------------------------Multiset operations----------------------------"<<std::endl;
 	multiset_operations();
+	std::cout<<"----------------------------Map operations----------------------------"<<std::endl;
+	map_operations();
+	std::cout<<"----------------------------MultiMap operations----------------------------"<<std::endl;
+	multimap_operations();
 #endif	
 	return 0;
 }

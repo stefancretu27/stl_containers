@@ -37,7 +37,7 @@ void set_operations()
 	std::set<int>::iterator find = iset.find(3);
 	std::cout<<"find: "<<*find<<std::endl;
 	
-	//use ietartors to find lower bound (the address of the key euqal to or less than) and upper bound (address of the next key) for the given key
+	//use iterators to find lower bound (the address of the key equal to or less than) and upper bound (address of the next key) for the given key
 	std::set<int>::iterator lb = iset.lower_bound(3), ub = iset.upper_bound(3);
 	std::cout<<"lower bound "<<*lb<<" upper bound "<<*ub<<std::endl;
 	//use equal range to take lower and upper bounds

@@ -18,7 +18,7 @@ void multiset_operations()
 		std::cout<<*it<<" ";
 	std::cout<<"\n";
 	
-	//Unlike std::set, std::multiset.insert does not return a pair of ietartor and bool, where bool tells if the insertion was successful, as multiple keys with similar values are allowed for being stored
+	//Unlike std::set, std::multiset.insert does not return a pair of itearator and bool, where bool tells if the insertion was successful, as multiple keys with similar values are allowed for being stored
 	std::multiset<int>::iterator pos = imset.insert(2);
 	std::cout<<"key "<<*pos<<" was inserted"<<std::endl;
 	

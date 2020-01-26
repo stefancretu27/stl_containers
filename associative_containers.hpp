@@ -8,6 +8,7 @@
 
 //associative containers
 #include <set>
+#include <map>
 
 
 //unique keys collection, sorted by keys
