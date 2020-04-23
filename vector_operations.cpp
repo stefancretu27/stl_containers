@@ -22,13 +22,24 @@ void vector_operations()
 		std::cout<<*it<<" ";
 	std::cout<<"\n";
 	
-	//indexing
+	/*
+	 * Iterators: LegacyRandomAccessIterators: begin, end, rbegin, rend 
+	 * 			  const LegacyRandomAccessIterators: cbegin, cend, crbegin, crend
+	 */ 
+	
+	/*
+	 * Element access: front(), back(), at(index) and indexing operator [index].
+	 * As a consequence of having random access iterators.
+	 */ 
 	std::cout<<"front: "<<ivec.front()<<" back: "<<ivec.back()<<" at(index): "<<ivec.at(2)<<" indexing operator: "<<ivec[1]<<std::endl;
 	
 	//assign(#of values to assign, value)
 	strvec.assign(4, "str4");
 	
-	//size = #of elements existing; capacity = # of elements that can be stored in the allocated memory => size<=capacity
+	/*
+	 * Capacity: empty(), size(), capacity(), reserve(capacity amount), shrink_to_fit() which makes capacity=size
+	 * size = #of elements existing; capacity = # of elements that can be stored in the allocated memory => size<=capacity
+	 */
 	std::cout<<"strvec size: "<<strvec.size()<<" max size: "<<strvec.max_size()<<" capacity: "<<strvec.capacity()<<std::endl;
 	std::cout<<"ivec size: "<<ivec.size()<<" capacity: "<<ivec.capacity()<<std::endl;
 	
@@ -44,18 +55,28 @@ void vector_operations()
 	fvec = fvec2;
 	std::cout<<"after assigning a vector with more elements fvec size: "<<fvec.size()<<" capacity: "<<fvec.capacity()<<std::endl;
 	
+	/*
+	 * Modifiers: 	clear(), erase(iterator or range of iterators), 
+	 * 				push_back(value), emplace_back(c-tor args),
+	 * 				insert(iterator, value or range of iterators), emplace(iterator, c-tor args),
+	 * 				pop_back(),
+	 * 				resize(# of values to resize to), swap(vector to swap with)
+	 */
 	//clears contents =>size=0, but capacity stays unchanged (no memory is cleared)
 	fvec2.clear();
 	std::cout<<"after clear fvec2 size: "<<fvec2.size()<<" capacity: "<<fvec2.capacity()<<std::endl;
+	
 	//insert(pos, value), insert value before pos
 	fvec.insert(fvec.begin()+1, -273);
 	std::cout<<"after insert fvec size: "<<fvec.size()<<" capacity: "<<fvec.capacity()<<std::endl;
 	for(auto f:fvec)
 		std::cout<<f<<" ";
 	std::cout<<"\n";
+	
 	//erase(pos), erase(start it, end it), deletes element and reduces size, but capacity stays unchanged
 	fvec.erase(fvec.cbegin(), fvec.cend());
 	std::cout<<"after erase fvec size: "<<fvec.size()<<" capacity: "<<fvec.capacity()<<std::endl;
+	
 	//push_back(val): add element at the end and increase size
 	fvec.push_back(3.14);
 	fvec.push_back(1.34);
@@ -69,6 +90,8 @@ void vector_operations()
 		std::cout<<*it<<" ";
 	std::cout<<"\n";
 	std::cout<<"after resize ivec size: "<<ivec.size()<<" capacity: "<<ivec.capacity()<<std::endl;
+	
+	//pop_back()
 	ivec.pop_back();
 		for(std::vector<std::int32_t>::iterator it = ivec.begin(), itend = ivec.end(); it!=itend; ++it)
 		std::cout<<*it<<" ";

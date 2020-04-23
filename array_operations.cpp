@@ -13,18 +13,30 @@ void array_operations()
 	 //construct using uniform initialization
 	 std::array<int, 5> a1{0,1,2,3,4};
 	 
-	 //element access
+	/*
+	 * Iterators: LegacyRandomAccessIterators: begin, end, rbegin, rend 
+	 * 			  const LegacyRandomAccessIterators: cbegin, cend, crbegin, crend
+	 */ 
+	 
+	/*
+	 * Element access: front(), back(), at(index) and indexing operator [index]. 
+	 * As consequence of having random access iterators
+	 */ 
 	std::cout<<"front()="<<a1.front()<<" back()="<<a1.back()<<" at(index)="<<a1.at(1)<<" index operator="<<a1[3]<<std::endl;  
 	//get raw pointer to container
 	int *parray =  a1.data();
 	std::cout<<"print element using raw pointer to container "<<*(parray+2)<<std::endl<<std::endl;
 	
-	//capacity
+	/*
+	 * Capacity: empty(), size()
+	 */ 
 	std::cout<<"is array empty "<<a0.empty()<<std::endl;
 	std::cout<<"array size "<<a0.size()<<std::endl;
 	std::cout<<"max array size: max elements container can have due to system/library implementation "<<a0.max_size()<<std::endl;
 	
-	//operations
+	/*
+	 * Operations: fill(data), swap(array_to_swap_with)
+	 */ 
 	//copy the arg character inall array positions
 	a0.fill('w');
 	//use std::copy from algorithm to copy the sequence of elements starting at first arg, ending at 2nd arg to destination starting at 3rd arg + using iterators
@@ -39,7 +51,9 @@ void array_operations()
 	for(char c: a2)
 		std::cout<<c<<" ";
 	
-	//compare arrays
+	/*
+	 * Operators overloads
+	 */
 	std::cout<<std::endl<<"are arrays different "<<(a0!=a2)<<" are elements in 1st array smaller than those in 2nd array "<<(a0<a2)<<std::endl;
 	
 	//use reverse iterators

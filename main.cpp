@@ -1,8 +1,10 @@
 #include "sequence_containers.hpp"
 #include "associative_containers.hpp"
+#include "container_adaptors.hpp"
 
 //#define SEQUENCE_CONTAINERS
-#define ASSOCIATIVE_CONTAINERS
+//#define ASSOCIATIVE_CONTAINERS
+#define CONTAINER_ADAPTORS
 
 int main()
 {
@@ -28,6 +30,11 @@ int main()
 	map_operations();
 	std::cout<<"----------------------------MultiMap operations----------------------------"<<std::endl;
 	multimap_operations();
-#endif	
+#endif
+
+#ifdef CONTAINER_ADAPTORS
+	std::cout<<"----------------------------Container adaptors operations----------------------------"<<std::endl;
+	priority_queue_operations();
+#endif		
 	return 0;
 }
