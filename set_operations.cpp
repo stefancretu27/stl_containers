@@ -3,11 +3,25 @@
 void set_operations()
 {
 	/*
-	 * Template class implementing a container of unique objects of type Key, sorted using a comparison function.
+	 * Template class implementing a container of unique objects of type Key, sorted using a comparison function. It uses a default compare function std::less, which can be changed via c-tor arg.
 	 * O(log(n)) is the complexity of insertion, deletion and search.
 	 * Implemented as red-black trees.
 	 */ 
 	 
+	/*
+	 * Iterators: bidirectional and const: begin, cbegin, end, cend
+	 */  
+	 
+	/*
+	 * Capacity: empty(), size()
+	 */
+	 
+	/*
+	 * Operations: clear(), erase(iterator)
+	 * 				insert(key),insert(iterator hint, key), emplace(c-tor args), emplace_hint(iterator hint, value)
+	 * 				swap(set))
+	 */
+	//insert returns pair <iterator of position where insertion took place, bool result>    
 	std::set<int> iset;
 	std::pair<std::set<int>::iterator, bool> result;
 	result = iset.insert(1);
@@ -17,18 +31,22 @@ void set_operations()
 	
 	//insert using initilizer list
 	iset.insert({2,3});
-	//avoid calling copy or move c-tor, as object is constructed in place
+	//emplace() useful to avoid calling copy or move c-tor, as object is constructed in place
 	iset.emplace(4);
-	//give wrong hint
+	//emplace_hint() with bad and better hint
 	iset.emplace_hint(++iset.begin(), 5);
-	//give better hint
 	iset.emplace_hint(--iset.end(), 6);
 	
 	std::cout<<"insert, insert initilizer list, emplace, emplace_hint: "<<std::endl;
 	for(std::set<int>::iterator it = iset.begin(), end = iset.end(); it!=end; ++it)
 		std::cout<<*it<<" ";
 	std::cout<<"\n";
-	
+	/*
+	 * Lookup: count(key) - returns # of elements having specified key
+	 * 			find(key) - return iterator to element having key
+	 * 			equal_range(key) - returns pair of iterators
+	 * 			lower_bound(key), upper_bound(key) - return iterator to position of elements
+	 */ 
 	//counts # of elements that have the given key. Since no duplicates are allowed it returns 0 or 1.
 	std::set<int>::size_type count = iset.count(5);
 	std::cout<<"count: "<<count<<std::endl;

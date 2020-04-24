@@ -34,6 +34,8 @@ int main()
 
 #ifdef CONTAINER_ADAPTORS
 	std::cout<<"----------------------------Container adaptors operations----------------------------"<<std::endl;
+	stack_operations();
+	queue_operations();
 	priority_queue_operations();
 #endif		
 	return 0;

@@ -4,6 +4,7 @@
 template <typename T>
 void print_queue(T &q)
 {
+	std::cout<<"print priority queue"<<std::endl;
 	//modifiers: remove first element using pop
 	while(!q.empty())
 	{
@@ -23,17 +24,24 @@ void priority_queue_operations()
 	 
 	std::priority_queue<int> pqi;
 	
-	//modifiers:add elements using push and emplace
+	/*
+	 * Modifiers: push(), emplace() - both insert the element where it fist according to compare function. Thus, the queue remains sorted.
+	 * 			pop()
+	 */ 
 	pqi.push(7);
 	pqi.push(8);
 	pqi.emplace(3);
 	pqi.emplace(9);
 	
-	//capacity
-	std::cout<<pqi.empty()<<" "<<pqi.size()<<std::endl;
+	/*
+	 * Capacity: empty(), size()
+	 */ 
+	std::cout<<"prio queue empty: "<<pqi.empty()<<" size: "<<pqi.size()<<std::endl;
 	
-	//element access: only the first element
-	std::cout<<pqi.top()<<std::endl;
+	/*
+	 * element access: only the first element top()
+	 */ 
+	std::cout<<"prio queue top: "<<pqi.top()<<std::endl;
 	
 	print_queue(pqi);
 	

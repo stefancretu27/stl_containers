@@ -5,7 +5,8 @@ void array_operations()
 	/*
 	 * Template class that implements containers similar to C style arrays (like a struct encapsulating a statically allocated array)
 	 * It's size is fixed and specified upon creation as a template argument
-	 * Can be used as tuple of N elements of same size
+	 * Can be used as tuple of N elements of same size.
+	 * It does not have modifiers. Looks like it is only used with data sets whose size is not to be modified during program's lifetime: no insert, delete, emplace, push, pop. Just update via assignment and indexing
 	 */
 	 
 	 //construct using copy initialization
@@ -37,7 +38,7 @@ void array_operations()
 	/*
 	 * Operations: fill(data), swap(array_to_swap_with)
 	 */ 
-	//copy the arg character inall array positions
+	//copy the arg character in all array positions
 	a0.fill('w');
 	//use std::copy from algorithm to copy the sequence of elements starting at first arg, ending at 2nd arg to destination starting at 3rd arg + using iterators
 	std::copy(a0.begin(), a0.end(), std::ostream_iterator<char>(std::cout, " "));
